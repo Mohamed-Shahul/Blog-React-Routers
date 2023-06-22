@@ -1,13 +1,225 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width:100%;
+  font-family: 'Poppins', sans-serif;
+}
+li:hover{
+  cursor: pointer;
+}
+.header{
+  background: black;
+  padding: 20px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+.header ul{
+  display:grid;
+  justify-content: space-between;
+  grid-template-columns: 200px 200px;
+}
+.header ul li{
+  list-style: none;
+}
+.header ul a{
+  text-decoration: none;
+  color: white;
+}
+.header li:hover{
+  color: silver;
+}
+.HeadPostsList{
+  padding: 20px;
+}
+.HeadPostsList{
+  display: grid;
+  grid-template-columns: repeat(5,260px);
+}
+.HeadPostsList ul{
+  list-style: none;
+  padding: 15px;
+  margin: 2px;
+  border-radius: 10px;
+  background-color: rgb(15, 82, 109);
+  color: white;
+};
+.HeadPostsList ul li {
+  text-decoration: none;
+}
+.HeadPostsList ul:hover{
+  background-color: rgb(3, 61, 83);
+}
+.HeadPostsList ul:hover .title{
+  color: white;
+}
+.headUserInfo{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.headUserInfo ul{
+  list-style: none;
+  padding: 15px;
+  margin: 2px;
+  border-radius: 10px;
+  background-color:teal;
+  color: white;
+  width: 300px
+};
+
+
+
+.title{
+  color: grey;
+  font-size: 25px;
+  font-weight: bold;
+}
+.link{
+  text-decoration: none;
+  color: whitesmoke;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.postsList{
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(4,320px);
 }
+.postsList ul{
+  list-style: none;
+  padding: 15px;
+  margin: 2px;
+  border-radius: 10px;
+  background-color: teal; 
+  color: white;
+};
+.postsList ul li {
+  text-decoration: none;
+}
+.postsList ul:hover{
+  background: linear-gradient(to right ,teal,black);
+}
+.postsList ul:hover .title{
+  color: white;
+}
+
+.searchBar{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.searchBar label{
+  font-size: 20px ;
+}
+.searchBar input{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+
+}
+
+.postDetails{
+  padding: 20px;
+}
+.postDetails ul{
+  list-style: none;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color:teal; 
+  color: white;
+  width: 300px;
+}
+.postDetails ul a{
+  text-decoration: none;
+}
+.viewPostUser{
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.postDetails ul:hover{
+  background:linear-gradient(to right ,teal,black);
+}
+
+.posterInfos{
+  padding: 20px;
+}
+.posterInfos ul{
+  list-style: none;
+}
+.posterInfos ul{
+  list-style: none;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color:teal; 
+  color: white;
+}
+.posterInfos ul a{
+  text-decoration: none;
+  color: white;
+}
+.posterInfos ul:hover{
+  background: linear-gradient(to right ,teal,black);
+}
+.posterInfos ul:hover .comm,.posterInfos ul:hover .user{
+  color: white;
+}
+
+.comm{
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+.user{
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+.viewUser:hover {
+  color: grey;
+}
+
+.photo{
+  width: 200px;
+}
+
+
+
+
+
+.userInfo{
+  padding: 25px;
+}
+.userInfo h1{
+  text-align: center;
+}
+.userInfo ul{
+  list-style: none;
+  text-align: center;
+}
+.userName{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.userEmail{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+
+
