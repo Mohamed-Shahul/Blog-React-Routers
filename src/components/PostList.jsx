@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const PostList = ({postData,searchTerm}) => {
   return (
     <>
       {
-        postData&&postData.filter((val)=>{
+        postData?postData.filter((val)=>{
           if(searchTerm===""){
             return val
           } 
@@ -21,7 +23,11 @@ const PostList = ({postData,searchTerm}) => {
                 <li>{data.title}</li>
               </Link>
             </ul>
-        ))
+        )):<Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       }
     </>
   )

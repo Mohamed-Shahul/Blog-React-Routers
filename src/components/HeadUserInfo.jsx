@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const HeadUserInfo = () => {
     const{id}=useParams()
@@ -28,7 +30,7 @@ const HeadUserInfo = () => {
   return (
     <div className='headUserInfo'>
       {
-        data&&data.map((userData)=>(
+        data?data.map((userData)=>(
             <ul key={userData.id}>
               <span className='userProfile'>UserProfile</span>
               <img src={photo} className='photo' />
@@ -37,7 +39,11 @@ const HeadUserInfo = () => {
                 <span className='userEmail'>UserEmail</span>
                 <li> {userData.email}</li>
             </ul>
-        ))
+        )):<Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       }
     </div>
   )

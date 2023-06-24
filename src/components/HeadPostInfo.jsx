@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const HeadPostInfo = () => {
     const [data, setData] = useState(null)
@@ -36,13 +38,17 @@ const HeadPostInfo = () => {
         <div className="commentBox">
         <h1 className='comm'>Comments</h1>
         {
-            data&&data.map((comments)=>(
+            data?data.map((comments)=>(
                 <ul className='commBoxUl' key={comments.id}>
                     <li>{comments.body}</li>
                     <span className='user'>viewUser</span>
                     <Link className='viewUser' to={`userInfo/${comments.id}`}><li>{comments.name}👈</li></Link>
                 </ul>
-            ))
+            )):<Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open>
+            <CircularProgress color="inherit" />
+          </Backdrop>
         }
         </div>
         

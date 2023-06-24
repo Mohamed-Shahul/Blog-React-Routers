@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body{
-  width:100vw;
+  width:100%;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -149,11 +149,12 @@ ul:hover{
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(4,320px);
+  justify-content: center;
 }
 .postsLists ul{
   list-style: none;
   padding: 15px;
-  margin: 2px;
+  margin: 1px;
   border-radius: 10px;
   background-color: teal; 
   color: white;
@@ -269,6 +270,9 @@ ul:hover{
 
 
 @media screen and (max-width:600px){
+  body{
+    width:100vw;
+  }
   .HeadPostsList {
     grid-template-columns: repeat(1,260px);
     justify-content: center;
