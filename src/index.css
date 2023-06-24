@@ -5,13 +5,16 @@
   box-sizing: border-box;
 }
 body{
-  width:100%;
+  width:100vw;
   font-family: 'Poppins', sans-serif;
 }
-li:hover{
+
+ul:hover{
   cursor: pointer;
 }
+
 .header{
+  width: 100%;
   background: black;
   padding: 20px 20px;
   font-size: 20px;
@@ -20,9 +23,10 @@ li:hover{
   text-align: center;
 }
 .header ul{
-  display:grid;
+  padding:0px 20px;
+  display: flex;
   justify-content: space-between;
-  grid-template-columns: 200px 200px;
+  align-items: center;
 }
 .header ul li{
   list-style: none;
@@ -34,10 +38,10 @@ li:hover{
 .header li:hover{
   color: silver;
 }
+
+
 .HeadPostsList{
   padding: 20px;
-}
-.HeadPostsList{
   display: grid;
   grid-template-columns: repeat(5,260px);
 }
@@ -55,9 +59,54 @@ li:hover{
 .HeadPostsList ul:hover{
   background-color: rgb(3, 61, 83);
 }
+.HeadPostsList ul .title{
+  color: silver;
+  font-size: 25px;
+  font-weight: bold;
+}
 .HeadPostsList ul:hover .title{
   color: white;
 }
+
+
+
+
+
+.commentBox{
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.commentBox ul:hover{
+  background-color: grey;
+}
+.commentBox ul:hover .viewUser{
+  color: blue;
+}
+
+
+
+.commentBox .comm{
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+.titleBox{
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: teal;
+}
+.titleBox h1{
+  color: silver;
+  font-size: 30px;
+}
+.titleBox p{
+  color: white;
+}
+
+
 .headUserInfo{
   padding: 20px;
   display: flex;
@@ -72,27 +121,36 @@ li:hover{
   background-color:teal;
   color: white;
   width: 300px
-};
+}
 
 
-
-.title{
-  color: grey;
+.postDetails{
+  padding: 20px;
+}
+.postDetails ul{
+  list-style: none;
+  padding: 20px;
+  border: 1px solid black;
+  color: white;
+  background-color: silver;
+}
+.postDetails ul a{
+  text-decoration: none;
+}
+.postDetails .title{
+  color: black;
   font-size: 25px;
   font-weight: bold;
 }
-.link{
-  text-decoration: none;
-  color: whitesmoke;
-}
 
 
-.postsList{
-  padding: 15px;
+
+.postsLists{
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(4,320px);
 }
-.postsList ul{
+.postsLists ul{
   list-style: none;
   padding: 15px;
   margin: 2px;
@@ -100,13 +158,17 @@ li:hover{
   background-color: teal; 
   color: white;
 };
-.postsList ul li {
+.postsLists ul a{
   text-decoration: none;
 }
-.postsList ul:hover{
+.postsLists ul:hover{
   background: linear-gradient(to right ,teal,black);
 }
-.postsList ul:hover .title{
+.postsLists ul .title{
+  color: silver;
+  font-size: 20px;
+}
+.postsLists ul:hover .title{
   color: white;
 }
 
@@ -126,29 +188,10 @@ li:hover{
 
 }
 
-.postDetails{
-  padding: 20px;
-}
-.postDetails ul{
-  list-style: none;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-  background-color:teal; 
-  color: white;
-  width: 300px;
-}
-.postDetails ul a{
-  text-decoration: none;
-}
 .viewPostUser{
   color: black;
   font-size: 18px;
   font-weight: bold;
-}
-
-.postDetails ul:hover{
-  background:linear-gradient(to right ,teal,black);
 }
 
 .posterInfos{
@@ -159,21 +202,17 @@ li:hover{
 }
 .posterInfos ul{
   list-style: none;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-  background-color:teal; 
+  padding: 20px;
+  border: 1px solid black;
   color: white;
+  background-color: silver;
 }
 .posterInfos ul a{
   text-decoration: none;
   color: white;
 }
 .posterInfos ul:hover{
-  background: linear-gradient(to right ,teal,black);
-}
-.posterInfos ul:hover .comm,.posterInfos ul:hover .user{
-  color: white;
+  background:grey;
 }
 
 .comm{
@@ -186,6 +225,10 @@ li:hover{
   font-weight: bold;
   font-size: 18px;
 }
+.viewUser{
+  text-decoration: none;
+  color: white;
+}
 .viewUser:hover {
   color: grey;
 }
@@ -193,11 +236,6 @@ li:hover{
 .photo{
   width: 200px;
 }
-
-
-
-
-
 .userInfo{
   padding: 25px;
 }
@@ -218,8 +256,34 @@ li:hover{
   font-size: 20px;
   font-weight: bold;
 }
+.userProfile{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link{
+  text-decoration: none;
+  color: whitesmoke;
+}
 
 
+@media screen and (max-width:600px){
+  .HeadPostsList {
+    grid-template-columns: repeat(1,260px);
+    justify-content: center;
+}
+.searchBar {
+  justify-content: center;
+}
+.searchBar input {
+  width: 200px;
+  padding: 5px;
 
+}
+.postsLists {
+  justify-content: center;
+  grid-template-columns: repeat(1,260px);
+}
 
-
+}

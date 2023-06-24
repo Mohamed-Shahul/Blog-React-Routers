@@ -4,30 +4,48 @@ import { Link, useParams } from 'react-router-dom'
 
 const HeadPostInfo = () => {
     const [data, setData] = useState(null)
+    const[title,setTitle]=useState('')
     const {id} = useParams()
 
     useEffect(()=>{
         getIdData()
+        getTitle()
     },[id])
 
     let getIdData=async ()=>{
-            let res=await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
-            setData([res.data])
+            let res=await axios.get(`https://jsonplaceholder.typicode.com/comments`);
+            let val = res.data.filter((datas) =>datas.postId===parseInt(id))
+            setData(val)
+    }
+
+    let getTitle=async ()=>{
+        let res=await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+        setTitle(res.data)
     }
 
 
   return (
     <div className='postDetails'>
-        <h1>Post Information</h1>
+        <h2>Post Information</h2>
+
+        <div className="titleBox">
+            <h1>Title</h1>
+            <p>{title&&title.body}</p>
+        </div>
+
+        <div className="commentBox">
+        <h1 className='comm'>Comments</h1>
         {
-            data&&data.map((data)=>(
-                <ul key={data.id}>
-                    <li>{data.body}</li>
-                    <Link to={`headUserInfo/${data.id}`}><li className='viewPostUser'>View User</li></Link>
-                    
+            data&&data.map((comments)=>(
+                <ul className='commBoxUl' key={comments.id}>
+                    <li>{comments.body}</li>
+                    <span className='user'>viewUser</span>
+                    <Link className='viewUser' to={`userInfo/${comments.id}`}><li>{comments.name}👈</li></Link>
                 </ul>
             ))
         }
+        </div>
+        
     </div>
   )
 }

@@ -5,10 +5,13 @@ import AllPostsInfoList from './AllPostsInfoList'
 
 const AllPosterInfos = () => {
     const [data, setData] = useState()
+    const [title, setTitle] = useState()
+
     const {id} = useParams()
 
     useEffect(()=>{
         getIdData()
+        getTitle()
     },[id])
 
     let getIdData=async ()=>{
@@ -16,11 +19,15 @@ const AllPosterInfos = () => {
             let val = res.data.filter((datas) =>datas.postId===parseInt(id))
             setData(val)
     }
+    let getTitle=async ()=>{
+      let res=await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+      setTitle(res.data)
+  }
 
   return (
     <div className='posterInfos'>
        <h1>Post Information</h1>
-       <AllPostsInfoList data={data}/>
+       <AllPostsInfoList title={title} data={data}/>
     </div>
   )
 }

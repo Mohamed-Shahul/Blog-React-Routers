@@ -23,7 +23,7 @@ const Posts = () => {
       <label htmlFor="">🔍</label>
     </div>
 
-    <div className='postsList'>
+    <div className='postsLists'>
       <PostList postData={postData} searchTerm={searchTerm}/>
     </div>
     </>   
